@@ -1,17 +1,17 @@
 // interact.js
 
-const API_KEY = process.env.ETH_API_KEY;
+const API_KEY = process.env.ARB_API_KEY;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
-const CONTRACT_ADDRESS = process.env.ETH_CONTRACT_ADDRESS;
+const CONTRACT_ADDRESS = process.env.ARB_CONTRACT_ADDRESS;
 
 // For Hardhat
 const contract = require("../artifacts/contracts/HelloWorld.sol/HelloWorld.json");
 
-// console.log(JSON.stringify(contract.abi));
+console.log(JSON.stringify(contract.abi));
 
 
 // Provider
-const alchemyProvider = new ethers.providers.AlchemyProvider(network="goerli", API_KEY);
+const alchemyProvider = new ethers.providers.AlchemyProvider(network="arbitrum-goerli", API_KEY);
 
 // Signer
 const signer = new ethers.Wallet(PRIVATE_KEY, alchemyProvider);
